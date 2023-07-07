@@ -1,0 +1,16 @@
+{
+    "name": "Clipboard Notes Extension",
+    "description": "Save your notes and easily access them",
+    "version": "1.0.8",
+    "manifest_version" : 3,
+    "author": "gioliotta",
+    "action": {
+        "default_title": "Clipboard Notes",
+        "default_popup": "../index.html",
+        "default_icon" : {
+            "16": "clipboard16.png",
+            "32": "clipboard32.png",
+            "128": "clipboard128.png"
+        }    
+    }
+}

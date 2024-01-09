@@ -24,14 +24,14 @@ const getDeleteElementsLS = function () {
 };
 
 function App() {
-  const [language, setLanguage] = useState("EN");
-  const [securityNotice, setSecurityNotice] = useState(false);
-  const [showAgainSecurityNotice, setShowAgainSecurityNotice] = useState(true);
-  const [elements, setElements] = useState(getElementsLS);
-  const [inputValue, setInputValue] = useState("");
-  const [initialAnimate, setInitialAnimate] = useState(null);
-  const [recycleBin, setRecycleBin] = useState(false);
-  const [deleteElements, setDeleteElements] = useState(getDeleteElementsLS);
+  const [language, setLanguage] = useState("EN"),
+    [securityNotice, setSecurityNotice] = useState(false),
+    [showAgainSecurityNotice, setShowAgainSecurityNotice] = useState(true),
+    [elements, setElements] = useState(getElementsLS),
+    [inputValue, setInputValue] = useState(""),
+    [initialAnimate, setInitialAnimate] = useState(null),
+    [recycleBin, setRecycleBin] = useState(false),
+    [deleteElements, setDeleteElements] = useState(getDeleteElementsLS);
 
   useEffect(() => {
     const getSecurityData = localStorage.getItem("showAgainSecurityNotice");
@@ -45,8 +45,11 @@ function App() {
 
   useEffect(() => {
     const getLanguageData = localStorage.getItem("Language");
-    if (getLanguageData === "EN") setLanguage("EN");
-    if (getLanguageData === "ES") setLanguage("ES");
+    if (getLanguageData === "ES") {
+      setLanguage("ES");
+    } else {
+      setLanguage("EN");
+    }
   }, []);
 
   useEffect(() => {
@@ -65,6 +68,7 @@ function App() {
   }, [elements]);
 
   const handleInputFormChange = e => setInputValue(e.target.value);
+
   function selectedLanguage(en, es) {
     if (language === "EN") return en;
     if (language === "ES") return es;

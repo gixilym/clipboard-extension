@@ -1,8 +1,9 @@
 {
-  "name": "portapapeles-extensiones",
+  "name": "clipboard-extension",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.0.0",
   "type": "module",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
